@@ -46,7 +46,7 @@ class HomeController extends Controller
 
     public function selectProject($id)
     {
-        // Validar que el usuario esté asociado con el proyecto
+
         $user = auth()->user();
         $user->selected_project_id = $id;
         $user->save();

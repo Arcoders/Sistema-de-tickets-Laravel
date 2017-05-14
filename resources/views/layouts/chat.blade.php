@@ -34,7 +34,7 @@
         </ul>
 
     </div>
-    @if ($incident->state == 'Asignado')
+    @if ($incident->state == 'Assigné')
     <div class="panel-footer">
         <form action="{{ url('/mensajes') }}" method="POST">
             {{ csrf_field() }}

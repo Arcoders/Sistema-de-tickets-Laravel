@@ -11,10 +11,6 @@ class ProjectUserController extends Controller
 {
     public function store(Request $request)
     {
-    	// El nivel pertenezca al proyecto.
-    	// Asegurar que el proyecto exista.
-    	// Asegurar que el nivel exista.
-    	// Asegurar que el usuario exista.
 
     	$project_id = $request->input('project_id');
     	$user_id = $request->input('user_id');

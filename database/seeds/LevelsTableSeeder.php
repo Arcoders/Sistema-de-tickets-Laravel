@@ -13,7 +13,7 @@ class LevelsTableSeeder extends Seeder
     public function run()
     {
         Level::create([ // 1
-        	'name' => 'Support téléphonique',
+        	'name' => 'Support par chat',
         	'project_id' => 1
     	]);
     }

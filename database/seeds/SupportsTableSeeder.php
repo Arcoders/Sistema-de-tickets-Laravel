@@ -19,11 +19,5 @@ class SupportsTableSeeder extends Seeder
         	'password' => bcrypt('laravel'),
         	'role' => 1
         ]);
-        // User::create([ // 4
-        // 	'name' => 'Support S2',
-        // 	'email' => 'support2@gmail.com',
-        // 	'password' => bcrypt('laravel'),
-        // 	'role' => 1
-        // ]);
     }
 }
