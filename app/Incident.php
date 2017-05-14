@@ -15,11 +15,11 @@ class Incident extends Model
     ];
 
     public static $messages = [
-        'category_id.exists' => 'La categoría seleccionada no existe en nuestra base de datos.',
-        'title.required' => 'Es necesario ingresar un título para la incidencia.',
-        'title.min' => 'El título debe presentar al menos 5 caracteres.',
-        'description.required' => 'Es necesario ingresar una descripción para la incidencia.',
-        'description.min' => 'La descripción debe presentar al menos 15 caracteres.'
+        'category_id.exists' => 'La catégorie sélectionnée n\'existe pas dans notre base de données.',
+        'title.required' => 'Vous devez entrer un titre pour le plaidoyer.',
+        'title.min' => 'Le titre doit avoir au moins 5 caractères.',
+        'description.required' => 'Vous devez saisir une description de la question.',
+        'description.min' => 'La description doit comporter au moins 15 caractères.'
     ];
 
     protected $appends = ['state'];
@@ -53,7 +53,7 @@ class Incident extends Model
 
     public function messages()
     {
-        return $this->hasMany('App\Message');   
+        return $this->hasMany('App\Message');
     }
 
 
@@ -63,13 +63,13 @@ class Incident extends Model
     {
     	switch ($this->severity) {
     		case 'M':
-    			return 'Menor';
+    			return 'Faible';
 
     		case 'N':
     			return 'Normal';
-    		
+
     		default:
-    			return 'Alta';
+    			return 'Haut';
     	}
     }
 
@@ -93,17 +93,17 @@ class Incident extends Model
         if ($this->support)
             return $this->support->name;
 
-        return 'Sin asignar';
+        return 'Unassigned';
     }
 
     public function getStateAttribute()
     {
         if ($this->active == 0)
-            return 'Resuelto';
+            return 'Résolu';
 
         if ($this->support_id)
-            return 'Asignado';
+            return 'Assigné';
 
-        return 'Pendiente';
+        return 'En attente';
     }
 }

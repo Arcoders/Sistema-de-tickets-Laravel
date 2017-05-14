@@ -9,7 +9,7 @@ use App\Project;
 
 class ProjectController extends Controller
 {
-	
+
     public function index()
     {
         $projects = Project::withTrashed()->get();
@@ -22,7 +22,7 @@ class ProjectController extends Controller
 
         Project::create($request->all());
 
-        return back()->with('notification', 'El proyecto se ha registrado correctamente.');
+        return back()->with('notification', 'Le projet a été enregistré avec succès.');
     }
 
 	public function edit($id)
@@ -39,20 +39,20 @@ class ProjectController extends Controller
 
         Project::find($id)->update($request->all());
 
-        return back()->with('notification', 'El proyecto se ha actualizado correctamente.');
+        return back()->with('notification', 'Le projet a été mis à jour avec succès.');
     }
 
     public function delete($id)
     {
         Project::find($id)->delete();
 
-        return back()->with('notification', 'El proyecto se ha deshabilitado correctamente.');
+        return back()->with('notification', 'Le projet a été désactivé avec succès.');
     }
     public function restore($id)
     {
         Project::withTrashed()->find($id)->restore();
 
-        return back()->with('notification', 'El proyecto se ha habilitado correctamente.');
+        return back()->with('notification', 'Le projet a été activée avec succès.');
     }
 
 }

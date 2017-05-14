@@ -18,9 +18,9 @@ class MessageController extends Controller
     		'message' => 'required|min:5|max:255'
     	];
     	$messages = [
-    		'message.required' => 'Olvidó ingresar un mensaje.',
-    		'message.min' => 'Ingrese al menos 5 caracteres.',
-    		'message.max' => 'Ingrese como máximo 255 caracteres.'
+    		'message.required' => 'Vous avez oublié d\'inclure un message.',
+    		'message.min' => 'Entrez au moins 5 caractères.',
+    		'message.max' => 'Entrez jusqu\'à 255 caractères.'
     	];
 
     	$this->validate($request, $rules, $messages);
@@ -31,6 +31,6 @@ class MessageController extends Controller
     	$message->user_id = auth()->user()->id;
     	$message->save();
 
-    	return back()->with('notification', 'Su mensaje se ha enviado con éxito.');
+    	return back()->with('notification', 'Votre message a été envoyé.');
     }
 }

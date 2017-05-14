@@ -18,7 +18,7 @@ class LevelController extends Controller
     	$this->validate($request, [
     		'name' => 'required'
     	], [
-    		'name.required' => 'Es necesario ingresar un nombre para el nivel.'
+    		'name.required' => 'Vous devez saisir un nom pour le niveau.'
     	]);
 
     	Level::create($request->all());
@@ -31,11 +31,11 @@ class LevelController extends Controller
         $this->validate($request, [
             'name' => 'required'
         ], [
-            'name.required' => 'Es necesario ingresar un nombre para el nivel.'
+            'name.required' => 'Vous devez saisir un nom pour le niveau'
         ]);
 
         $level_id = $request->input('level_id');
-        
+
         $level = Level::find($level_id);
         $level->name = $request->input('name');
         $level->save();

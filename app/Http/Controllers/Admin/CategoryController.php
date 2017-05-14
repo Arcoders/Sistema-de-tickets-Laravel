@@ -14,7 +14,7 @@ class CategoryController extends Controller
     	$this->validate($request, [
     		'name' => 'required'
     	], [
-    		'name.required' => 'Es necesario ingresar un nombre para la categoría.'
+    		'name.required' => 'Vous devez saisir un nom pour la catégorie.'
     	]);
 
     	Category::create($request->all());
@@ -27,11 +27,11 @@ class CategoryController extends Controller
         $this->validate($request, [
             'name' => 'required'
         ], [
-            'name.required' => 'Es necesario ingresar un nombre para la categoría.'
+            'name.required' => 'Vous devez saisir un nom pour la catégorie.'
         ]);
 
         $category_id = $request->input('category_id');
-        
+
         $category = Category::find($category_id);
         $category->name = $request->input('name');
         $category->save();

@@ -47,7 +47,7 @@ class IncidentController extends Controller
 
         $incident->save();
 
-        return back();
+        return redirect("/ver/$incident->id");
     }
 
     public function edit($id)
@@ -143,7 +143,7 @@ class IncidentController extends Controller
             return back();
         }
 
-        return back()->with('notification', 'No es posible derivar porque no hay un siguiente nivel.');
+        return back()->with('notification', 'Il est impossible de tirer parce qu\'il n\'y a pas de niveau supérieur.');
     }
 
     public function getNextLevelId($level_id, $levels)

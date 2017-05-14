@@ -25,14 +25,14 @@ class UserController extends Controller
             'password' => 'required|min:6'
     	];
     	$messages = [
-    		'name.required' => 'Es necesario ingresar el nombre del usuario.',
-    		'name.max' => 'El nombre es demasiado extenso.',
-    		'email.required' => 'Es indispensable ingresar el e-mail del usuario.',
-    		'email.email' => 'El e-mail ingresado no es válido.',
-    		'email.max' => 'El e-mail es demasiado extenso.',
-    		'email.unique' => 'Este e-mail ya se encuentra en uso.',
-    		'password.required' => 'Olvidó ingresar una contraseña.',
-    		'password.min' => 'La contraseña debe presentar al menos 6 caracteres.'
+    		'name.required' => 'Vous devez entrer le nom d\'utilisateur.',
+    		'name.max' => 'Le nom est trop long.',
+    		'email.required' => 'Il est essentiel d\'entrer dans l\'e-mail de l\'utilisateur.',
+    		'email.email' => 'L\'e-mail saisie est invalide.',
+    		'email.max' => 'L\'e-mail est trop long.',
+    		'email.unique' => 'Cet email est déjà utilisé.',
+    		'password.required' => 'Vous avez oublié d\'entrer un mot de passe.',
+    		'password.min' => 'Le mot de passe doit comporter au moins 6 caractères.'
     	];
     	$this->validate($request, $rules, $messages);
 
@@ -40,10 +40,11 @@ class UserController extends Controller
     	$user->name = $request->input('name');
     	$user->email = $request->input('email');
     	$user->password = bcrypt($request->input('password'));
+        $user->selected_project_id = '1';
     	$user->role = 1;
     	$user->save();
 
-    	return back()->with('notification', 'Usuario registrado exitosamente.');
+    	return back()->with('notification', 'L\'utilisateur enregistré avec succès.');
     }
 
     public function edit($id)
@@ -64,9 +65,9 @@ class UserController extends Controller
             'password' => 'min:6'
     	];
     	$messages = [
-    		'name.required' => 'Es necesario ingresar el nombre del usuario.',
-    		'name.max' => 'El nombre es demasiado extenso.',
-    		'password.min' => 'La contraseña debe presentar al menos 6 caracteres.'
+    		'name.required' => 'Vous devez entrer le nom d\'utilisateur.',
+    		'name.max' => 'Le nom est trop long.',
+    		'password.min' => 'Le mot de passe doit comporter au moins 6 caractères.'
     	];
     	$this->validate($request, $rules, $messages);
 
@@ -79,7 +80,7 @@ class UserController extends Controller
 
     	$user->save();
 
-    	return back()->with('notification', 'Usuario modificado exitosamente.');
+    	return back()->with('notification', 'l\'utilisateur a été modifié avec succès.');
     }
 
     public function delete($id)
@@ -87,6 +88,6 @@ class UserController extends Controller
         $user = User::find($id);
         $user->delete();
 
-        return back()->with('notification', 'El usuario se ha dado de baja correctamente.');
+        return back()->with('notification', 'L\'utilisateur a désabonné correctement.');
     }
 }

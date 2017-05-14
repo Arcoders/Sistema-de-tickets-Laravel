@@ -23,7 +23,7 @@ class ProjectUserController extends Controller
 										->where('user_id', $user_id)->first();
 
 		if ($project_user)
-			return back()->with('notification', 'El usuario ya pertenece a este proyecto.');
+			return back()->with('notification', 'L\'utilisateur appartient déjà à ce projet.');
 
     	$project_user = new ProjectUser();
     	$project_user->project_id = $project_id;

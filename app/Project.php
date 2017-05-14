@@ -16,8 +16,8 @@ class Project extends Model
     ];
 
     public static $messages = [
-        'name.required' => 'Es necesario ingresar un nombre para el proyecto.',
-        'start.date' => 'La fecha no tiene un formato adecuado.'
+        'name.required' => 'Vous devez saisir un nom pour la spécialité.',
+        'start.date' => 'La date n\'a pas un format approprié.'
     ];
 
     protected $fillable = [
@@ -30,7 +30,7 @@ class Project extends Model
     {
         return $this->belongsToMany('App\User');
     }
-    
+
     public function categories()
     {
         return $this->hasMany('App\Category');
