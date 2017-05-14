@@ -21,7 +21,7 @@
             </div>
         @endif
 
-        <form action="" method="POST">
+        {{-- <form action="" method="POST">
             {{ csrf_field() }}
 
             <div class="form-group">
@@ -39,7 +39,7 @@
             <div class="form-group">
                 <button class="btn btn-primary">Nouvelle spécialité</button>
             </div>
-        </form>
+        </form> --}}
 
         <table class="table table-bordered">
             <thead>

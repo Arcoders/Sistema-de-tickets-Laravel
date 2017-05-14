@@ -13,21 +13,12 @@ class CategoriesTableSeeder extends Seeder
     public function run()
     {
         Category::create([
-			'name' => 'Categoría A1',
+			'name' => 'PC s1',
 			'project_id' => 1
         ]);
         Category::create([
-			'name' => 'Categoría A2',
+			'name' => 'Samsung s8',
 			'project_id' => 1
-        ]);
-
-        Category::create([
-			'name' => 'Categoría B1',
-			'project_id' => 2
-        ]);
-        Category::create([
-			'name' => 'Categoría B2',
-			'project_id' => 2
         ]);
     }
 }

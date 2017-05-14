@@ -13,7 +13,7 @@ class User extends Authenticatable
     use SoftDeletes;
 
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'selected_project_id',
     ];
 
     protected $hidden = [
@@ -38,9 +38,9 @@ class User extends Authenticatable
     public function getAvatarPathAttribute()
     {
         if ($this->is_client)
-            return '/images/client.png';
+            return url('/images/client.png');
 
-        return '/images/support.png';
+        return url('/images/support.png');
     }
 
     public function getListOfProjectsAttribute()
@@ -61,7 +61,7 @@ class User extends Authenticatable
     }
     public function getIsClientAttribute()
     {
-        return $this->role == 2;   
+        return $this->role == 2;
     }
 
 }

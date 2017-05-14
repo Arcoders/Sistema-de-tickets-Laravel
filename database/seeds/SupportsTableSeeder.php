@@ -14,16 +14,16 @@ class SupportsTableSeeder extends Seeder
     {
         // Support - Project 1
         User::create([ // 3
-        	'name' => 'Soporte S1',
+        	'name' => 'Support S1',
         	'email' => 'support1@gmail.com',
-        	'password' => bcrypt('123123'),
+        	'password' => bcrypt('laravel'),
         	'role' => 1
         ]);
-        User::create([ // 4
-        	'name' => 'Soporte S2',
-        	'email' => 'support2@gmail.com',
-        	'password' => bcrypt('123123'),
-        	'role' => 1
-        ]);
+        // User::create([ // 4
+        // 	'name' => 'Support S2',
+        // 	'email' => 'support2@gmail.com',
+        // 	'password' => bcrypt('laravel'),
+        // 	'role' => 1
+        // ]);
     }
 }

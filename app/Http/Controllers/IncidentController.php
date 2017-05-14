@@ -23,7 +23,7 @@ class IncidentController extends Controller
         return view('incidents.show')->with(compact('incident', 'messages'));
     }
 
-    public function create() 
+    public function create()
     {
         $categories = Category::where('project_id', auth()->user()->selected_project_id)->get();
         return view('incidents.create')->with(compact('categories'));
@@ -69,7 +69,7 @@ class IncidentController extends Controller
         $incident->description = $request->input('description');
 
         $incident->save();
-        return redirect("/ver/$id");        
+        return redirect("/ver/$id");
     }
 
     public function take($id)
@@ -91,7 +91,7 @@ class IncidentController extends Controller
         // The level is the same?
         if ($project_user->level_id != $incident->level_id)
             return back();
-        
+
         $incident->support_id = $user->id;
         $incident->save();
 
@@ -105,7 +105,7 @@ class IncidentController extends Controller
         // Is the user authenticated the author of the incident?
         if ($incident->client_id != auth()->user()->id)
             return back();
-           
+
         $incident->active = 0; // false
         $incident->save();
 
@@ -119,7 +119,7 @@ class IncidentController extends Controller
         // Is the user authenticated the author of the incident?
         if ($incident->client_id != auth()->user()->id)
             return back();
-           
+
         $incident->active = 1; // true
         $incident->save();
 

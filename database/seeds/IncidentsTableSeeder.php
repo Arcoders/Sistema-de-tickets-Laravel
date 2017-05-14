@@ -14,11 +14,11 @@ class IncidentsTableSeeder extends Seeder
     {
 
         Incident::create([
-        	'title' => 'Primera incidencia',
-        	'description' => 'Lo que ocurre es que se encontró un problema en la página y esta se cerró.',
+        	'title' => 'Première incidence',
+        	'description' => 'Ce qui se passe est qu\'un problème a été trouvé sur mon ordinateur et il ne fonctionne pas',
         	'severity' => 'N',
 
-        	'category_id' => 2,
+        	'category_id' => 1,
         	'project_id' => 1,
         	'level_id' => 1,
 
