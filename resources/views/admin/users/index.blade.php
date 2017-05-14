@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="panel panel-primary">
-    <div class="panel-heading">Usuarios</div>
+    <div class="panel-heading">Utilisateurs</div>
 
     <div class="panel-body">
         @if (session('notification'))
@@ -29,15 +29,15 @@
                 <input type="email" name="email" class="form-control" value="{{ old('email') }}">
             </div>
             <div class="form-group">
-                <label for="name">Nombre</label>
+                <label for="name">Nom</label>
                 <input type="text" name="name" class="form-control" value="{{ old('name') }}">
             </div>
             <div class="form-group">
-                <label for="password">Contraseña</label>
+                <label for="password">Mot de passe</label>
                 <input type="text" name="password" class="form-control" value="{{ old('password', str_random(8)) }}">
             </div>
             <div class="form-group">
-                <button class="btn btn-primary">Registrar usuario</button>
+                <button class="btn btn-primary">Enregistrer</button>
             </div>
         </form>
 
@@ -45,8 +45,8 @@
             <thead>
                 <tr>
                     <th>E-mail</th>
-                    <th>Nombre</th>
-                    <th>Opciones</th>
+                    <th>Nom</th>
+                    <th>Options</th>
                 </tr>
             </thead>
             <tbody>

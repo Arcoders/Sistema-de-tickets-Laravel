@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="panel panel-primary">
-    <div class="panel-heading">Usuarios</div>
+    <div class="panel-heading">Utilisateurs</div>
 
     <div class="panel-body">
         @if (session('notification'))
@@ -25,29 +25,29 @@
             {{ csrf_field() }}
 
             <div class="form-group">
-                <label for="name">Nombre</label>
+                <label for="name">Nom</label>
                 <input type="text" name="name" class="form-control" value="{{ old('name') }}">
             </div>
             <div class="form-group">
-                <label for="description">Descripción</label>
+                <label for="description">Description</label>
                 <input type="text" name="description" class="form-control" value="{{ old('description') }}">
             </div>
             <div class="form-group">
-                <label for="start">Fecha de inicio</label>
+                <label for="start">Date de début</label>
                 <input type="date" name="start" class="form-control" value="{{ old('start', date('Y-m-d')) }}">
             </div>
             <div class="form-group">
-                <button class="btn btn-primary">Registrar proyecto</button>
+                <button class="btn btn-primary">Nouvelle spécialité</button>
             </div>
         </form>
 
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>Nombre</th>
+                    <th>Nom</th>
                     <th>Descripción</th>
-                    <th>Fecha de inicio</th>
-                    <th>Opciones</th>
+                    <th>Date de début</th>
+                    <th>Options</th>
                 </tr>
             </thead>
             <tbody>

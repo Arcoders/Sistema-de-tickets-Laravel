@@ -1,6 +1,6 @@
 <div class="panel panel-info">
     <div class="panel-heading">
-        <h3 class="panel-title">Discusión</h3>
+        <h3 class="panel-title">Discussion</h3>
     </div>
     <div class="panel-body">
         @if (count($errors) > 0)
@@ -42,7 +42,7 @@
             <div class="input-group">
                 <input type="text" class="form-control" name="message">
                 <span class="input-group-btn">
-                    <button class="btn btn-default" type="submit">Enviar</button>
+                    <button class="btn btn-default" type="submit">Envoyer</button>
                 </span>
             </div>
         </form>

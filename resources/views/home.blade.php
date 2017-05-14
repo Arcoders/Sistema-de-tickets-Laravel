@@ -9,18 +9,18 @@
         @if (auth()->user()->is_support)
         <div class="panel panel-success">
 			<div class="panel-heading">
-				<h3 class="panel-title">Incidencias asignadas a mí</h3>
+				<h3 class="panel-title">Les incidents assignés à moi</h3>
 			</div>
 			<div class="panel-body">
 				<table class="table table-bordered">
 					<thead>
 						<tr>
-							<th>Código</th>
-							<th>Categoría</th>
-							<th>Severidad</th>
-							<th>Estado</th>
-							<th>Fecha creación</th>
-							<th>Título</th>
+							<th>Code</th>
+							<th>Catégorie</th>
+							<th>Rigueur</th>
+							<th>État</th>
+							<th>Date de création</th>
+							<th>Titre</th>
 						</tr>
 					</thead>
 					<tbody id="dashboard_my_incidents">
@@ -28,7 +28,7 @@
 							<tr>
 								<td>
 									<a href="{{ url("/ver/$incident->id") }}">
-										Ver
+										voir
 									</a>
 								</td>
 								<td>{{ $incident->category_name }}</td>
@@ -45,18 +45,18 @@
 
 		<div class="panel panel-success">
 			<div class="panel-heading">
-				<h3 class="panel-title">Incidencias sin asignar</h3>
+				<h3 class="panel-title">Unassigned incidents</h3>
 			</div>
 			<div class="panel-body">
 				<table class="table table-bordered">
 					<thead>
 						<tr>
-							<th>Opción</th>
-							<th>Categoría</th>
-							<th>Severidad</th>
-							<th>Estado</th>
-							<th>Fecha creación</th>
-							<th>Título</th>
+							<th>Option</th>
+							<th>Catégorie</th>
+							<th>Rigueur</th>
+							<th>État</th>
+							<th>Date de création</th>
+							<th>Titre</th>
 						</tr>
 					</thead>
 					<tbody id="dashboard_pending_incidents">
@@ -64,7 +64,7 @@
 							<tr>
 								<td>
                                     <a href="{{ url("/ver/$incident->id") }}" class="btn btn-primary btn-sm">
-										atender
+										assister
 									</a>
 								</td>
 								<td>{{ $incident->category_name }}</td>
@@ -82,18 +82,18 @@
 
 		<div class="panel panel-success">
 			<div class="panel-heading">
-				<h3 class="panel-title">Incidencias reportadas por mí</h3>
+				<h3 class="panel-title">Les incidents signalés par moi</h3>
 			</div>
 			<div class="panel-body">
 				<table class="table table-bordered">
 					<thead>
 						<tr>
-							<th>Código</th>
-							<th>Categoría</th>
-							<th>Severidad</th>
-							<th>Estado</th>
-							<th>Fecha creación</th>
-							<th>Título</th>
+							<th>Code</th>
+							<th>Catégorie</th>
+							<th>Rigueur</th>
+							<th>État</th>
+							<th>Date de création</th>
+							<th>Titre</th>
 							<th>Responsable</th>
 						</tr>
 					</thead>
@@ -102,7 +102,7 @@
 							<tr>
 								<td>
                                     <a href="{{ url("/ver/$incident->id") }}">
-										Ver
+										voir
 									</a>
 								</td>
 								<td>{{ $incident->category_name }}</td>

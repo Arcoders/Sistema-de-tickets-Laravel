@@ -17,9 +17,9 @@
 
         <form action="" method="POST">
             {{ csrf_field() }}
-            
+
             <div class="form-group">
-                <label for="category_id">Categoría</label>
+                <label for="category_id">Catégorie</label>
                 <select name="category_id" class="form-control">
                     <option value="">General</option>
                     @foreach ($categories as $category)
@@ -28,23 +28,23 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="severity">Severidad</label>
+                <label for="severity">Rigueur</label>
                 <select name="severity" class="form-control">
-                    <option value="M" @if($incident->severity=='M') selected @endif>Menor</option>
+                    <option value="M" @if($incident->severity=='M') selected @endif>Faible</option>
                     <option value="N" @if($incident->severity=='N') selected @endif>Normal</option>
-                    <option value="A" @if($incident->severity=='A') selected @endif>Alta</option>
+                    <option value="A" @if($incident->severity=='A') selected @endif>Haut</option>
                 </select>
             </div>
             <div class="form-group">
-                <label for="title">Título</label>
+                <label for="title">Titre</label>
                 <input type="text" name="title" class="form-control" value="{{ old('title', $incident->title) }}">
             </div>
             <div class="form-group">
-                <label for="description">Descripción</label>
+                <label for="description">Description</label>
                 <textarea name="description" class="form-control">{{ old('description', $incident->description) }}</textarea>
             </div>
             <div class="form-group">
-                <button class="btn btn-primary">Guardar cambios</button>
+                <button class="btn btn-primary">Enregistrer les modifications</button>
             </div>
         </form>
 

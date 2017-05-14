@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="panel panel-primary">
-    <div class="panel-heading">Editar usuario</div>
+    <div class="panel-heading">Éditer Utilisateurs</div>
 
     <div class="panel-body">
         @if (session('notification'))
@@ -29,15 +29,15 @@
                 <input type="email" name="email" class="form-control" readonly value="{{ old('email', $user->email) }}">
             </div>
             <div class="form-group">
-                <label for="name">Nombre</label>
+                <label for="name">Nom</label>
                 <input type="text" name="name" class="form-control" value="{{ old('name', $user->name) }}">
             </div>
             <div class="form-group">
-                <label for="password">Contraseña <em>Ingresar solo si se desea modificar</em></label>
+                <label for="password">Mot de passe <em>Entrez seulement si vous voulez changer</em></label>
                 <input type="text" name="password" class="form-control" value="{{ old('password') }}">
             </div>
             <div class="form-group">
-                <button class="btn btn-primary">Guardar usuario</button>
+                <button class="btn btn-primary">Enregistrer</button>
             </div>
         </form>
 
@@ -47,7 +47,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <select name="project_id" class="form-control" id="select-project">
-                        <option value="">Seleccione proyecto</option>
+                        <option value="">Sélectionnez une spécialité</option>
                         @foreach ($projects as $project)
                             <option value="{{ $project->id }}">{{ $project->name }}</option>
                         @endforeach
@@ -55,25 +55,25 @@
                 </div>
                 <div class="col-md-4">
                     <select name="level_id" class="form-control" id="select-level">
-                        <option value="">Seleccione nivel</option>
+                        <option value="">Sélectionner le niveau</option>
                         @foreach ($levels as $level)
                             <option value="{{ $level->id }}">{{ $level->name }}</option>
                         @endforeach
                     </select>
                 </div>
                 <div class="col-md-4">
-                    <button class="btn btn-primary btn-block">Asignar proyecto</button>
+                    <button class="btn btn-primary btn-block">Attribuer</button>
                 </div>
             </div>
         </form>
 
-        <p>Proyectos asignados</p>
+        <p>Spécialités affectées</p>
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>Proyecto</th>
-                    <th>Nivel</th>
-                    <th>Opciones</th>
+                    <th>Spécialités</th>
+                    <th>Niveau</th>
+                    <th>Opctions</th>
                 </tr>
             </thead>
             <tbody>

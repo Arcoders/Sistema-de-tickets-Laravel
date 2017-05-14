@@ -14,10 +14,10 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>Código</th>
-                    <th>Proyecto</th>
-                    <th>Categoría</th>
-                    <th>Fecha de envío</th>
+                    <th>Code</th>
+                    <th>Spécialité</th>
+                    <th>Catégorie</th>
+                    <th>Date de livraison</th>
                 </tr>
             </thead>
             <tbody>
@@ -30,10 +30,10 @@
             </tbody>
             <thead>
                 <tr>
-                    <th>Asignada a</th>
-                    <th>Nivel</th>
-                    <th>Estado</th>
-                    <th>Severidad</th>
+                    <th>Attribué à</th>
+                    <th>Niveau</th>
+                    <th>État</th>
+                    <th>Rigueur</th>
                 </tr>
             </thead>
             <tbody>
@@ -49,44 +49,40 @@
         <table class="table table-bordered">
             <tbody>
                 <tr>
-                    <th>Título</th>
+                    <th>Titre</th>
                     <td id="incident_summary">{{ $incident->title }}</td>
                 </tr>
                 <tr>
-                    <th>Descripción</th>
+                    <th>Description</th>
                     <td id="incident_description">{{ $incident->description }}</td>
-                </tr>
-                <tr>
-                    <th>Adjuntos</th>
-                    <td id="incident_attachment">No se han adjuntado archivos</td>
                 </tr>
             </tbody>
         </table>
 
         @if ($incident->support_id == null && $incident->active && auth()->user()->canTake($incident))
         <a href="{{ url("/incidencia/$incident->id/atender") }}" class="btn btn-primary btn-sm" id="incident_btn_apply">
-            Atender incidencia
+            Adresse d'incidence
         </a>
         @endif
 
         @if (auth()->user()->id == $incident->client_id)
             @if ($incident->active)
                 <a href="{{ url("/incidencia/$incident->id/resolver") }}" class="btn btn-info btn-sm" id="incident_btn_solve">
-                    Marcar como resuelto
+                    Marquer comme résolu
                 </a>
                 <a href="{{ url("/incidencia/$incident->id/editar") }}" class="btn btn-success btn-sm" id="incident_btn_edit">
-                    Editar incidencia
+                    Modifier l'incidence
                 </a>
             @else
                 <a href="{{ url("/incidencia/$incident->id/abrir") }}" class="btn btn-info btn-sm" id="incident_btn_open">
-                    Volver a abrir incidencia
+                    Ouvrez à nouveau l'incidence
                 </a>
             @endif
         @endif
 
         @if (auth()->user()->id == $incident->support_id && $incident->active)
         <a href="{{ url("/incidencia/$incident->id/derivar") }}" class="btn btn-danger btn-sm" id="incident_btn_derive">
-            Derivar al siguiente nivel
+            Dériver le niveau suivant
         </a>
         @endif
 
